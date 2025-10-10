@@ -45,21 +45,28 @@
 
     printf("Digite o ponto turistico: ");
     scanf("%d", &ponto_turistico1);
-
-    // Cálculo da Densidade Populacional e PIB per Capita  
+    
+    // Cálculo da Densidade Populacional e PIB per Capita
     float quociente = (populacao1 / area1);
     float quociente1 = (populacao1 / PIB1);
 
     quociente = (float) populacao1 / area1;
     quociente1 = (float) populacao1 / PIB1;
 
-
     printf("Densidade populacional: %.2f\n", quociente);
-    printf("PIB per Capita: %.2f \n", quociente1);
+    printf("PIB per Capita: %.2f\n", quociente1);
 
-    printf("Dados \n");
+    // Cálculo do Super Poder Carta 1
+
+    float superpoder1 = (populacao1 + area1 + PIB1 + ponto_turistico1) - (quociente);
+
+    superpoder1 = (float) (populacao1 + area1 + PIB1 + ponto_turistico1) - (quociente);
+      
+    printf("Super Poder Carta 1: %.2f\n", superpoder1);
+
 
     // Exibição dos Dados primeira carta
+    printf("Dados \n");
     printf("CARTA 1\n");
     printf("Estado: %s\n", estado1);
     printf("Codigo: %s\n", codigo1);
@@ -68,8 +75,9 @@
     printf("Area KM²: %f\n", area1);
     printf("PIB: %f Milhões de reais\n", PIB1);
     printf("Pontos Turisticos: %d\n",ponto_turistico1);
-    printf("Densidade populacional: %.2f\n",quociente);
-    printf("PIB per Capita: %.2f\n", quociente1);
+    printf("Densidade populacional: %.2f hab/km²\n",quociente);
+    printf("PIB per Capita: %.2f Reais\n", quociente1);
+    printf("Super Poder Carta 1: %.2f\n", superpoder1);
    
 
     //cadastro da segunda carta
@@ -95,7 +103,7 @@
 
     printf("Digite o ponto turistico: ");
     scanf("%d", &ponto_turistico2);
-
+    
     // Cálculo da Densidade Populacional e PIB per Capita
     float quociente2 = (populacao1 / area2);
     float quociente3 = (populacao1 / PIB2);
@@ -107,9 +115,17 @@
     printf("Densidade populacional: %.2f\n", quociente2);
     printf("PIB per Capita: %.2f\n", quociente3);
 
-    printf("Dados \n");
+    // Cálculo do Super Poder Carta 2
+
+    float superpoder2 = (populacao2 + area2 + PIB2 + ponto_turistico2) - (quociente2);
+
+    superpoder2 = (float) (populacao2 + area2 + PIB2 + ponto_turistico2) - (quociente2);
+      
+    printf("Super Poder Carta 2: %.2f\n", superpoder2);
 
     // Exibição dos Dados segunda carta
+
+    printf("Dados \n");
     printf("CARTA 2\n");
     printf("Estado: %s\n", estado2);
     printf("Codigo: %s\n", codigo2);
@@ -120,6 +136,18 @@
     printf("Pontos Turisticos: %d\n",ponto_turistico2);
     printf("Densidade populacional: %.2f hab/km²\n",quociente2);
     printf("PIB per Capita: %.2f Reais\n", quociente3);
+    printf("Super Poder Carta 2: %.2f\n", superpoder2);
+
+
+    // Comparação das cartas
+    printf("---- COMPARAÇÃO DAS CARTAS ----\n");
+    printf("População: Carta 1 venceu: %d\n", populacao1 > populacao2);
+    printf("Área: Carta 1 venceu: %d\n", area1 > area2);
+    printf("PIB: Carta 1 venceu: %d\n", PIB1 > PIB2);
+    printf("Pontos Turísticos: Carta 1 venceu: %d\n", ponto_turistico1 > ponto_turistico2);
+    printf("Densidade Populacional: Carta 1 venceu: %d\n", quociente < quociente2);
+    printf("PIB per Capita: Carta 1 venceu: %d\n", quociente1 > quociente3);
+    printf("Super Poder: Carta 1 venceu: %d\n", superpoder1 > superpoder2);
     
     return 0;
    }
